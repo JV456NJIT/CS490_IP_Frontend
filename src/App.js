@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-import Landing from './landing';
 import Navbar from './navbar';
+import Landing from './landing';
 import Movies from './movies';
+import Customers from './customers';
 
 const showLanding = () => {
   if ((window.location.pathname === "/App.js") || (window.location.pathname === "/")) {
@@ -17,11 +18,18 @@ const showMovies = () => {
   }
 }
 
+const showCustomers = () => {
+  if (window.location.pathname === "/Customers.js") {
+    return <> <Navbar/> <Customers /> </>
+  }
+}
+
 export default () => {
   return (
     <div className="ui container">
       {showLanding()}
       {showMovies()}
+      {showCustomers()}
     </div>
   )
 }
