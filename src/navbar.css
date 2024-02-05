@@ -3,30 +3,30 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #1030AD;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #FFE20A;
   }
     
   #item {
     float: left;
-    border-right:1px solid #bbb;
-  }
-    
-  #item:last-child {
-    border-right: none;
+    border-right:1px solid #FFE20A;
   }
     
   #item a {
     display: block;
-    color: white;
+    color: #F19C0A;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
     
   #item a:hover:not(.active) {
-    background-color: #111;
+    background-color: #FFE20A;
+    color: #1030AD
   }
     
   #activeLink {
-    background-color: #04AA6D;
+    background-color: #FFE20A;
   }
