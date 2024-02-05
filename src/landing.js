@@ -1,26 +1,42 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './landing.css';
 
-const Landing = () =>{
-    return(
-        <div class="grid-container">
-            <div class="grid-child">
-                <h1>Top 5 Rented Movies</h1>
-            </div>
+function Landing(){
+    const [data, setData] = useState([]);
 
-            <div class="grid-child">
-                <h1>Movie Details</h1>
-            </div>
-            
-            <div class="grid-child">
-                <h1>List of Actors</h1>
-            </div>
+    useEffect(() => {
+        fetch('http://localhost:8000/topfive')
+        .then(res => res.json())
+        .then(data => setData(data))
+        .catch(err => console.log(err));
+    }, []);
 
-            <div class="grid-child">
-                <h1>Actor Details</h1>
-            </div>
+  return(
+    <div class="landing-container">
+        <div class="landing-child">
+                <th>Top Five Rented Movies</th>
+                {data.map((d, i ) => (
+                    <tr key={i}>
+                        <td>
+                            <div class="landing-item">{d.title}</div>
+                        </td>
+                    </tr>
+                ))}
         </div>
+        {/* 
+        <div class="landing-child">
+                <th>Top Five Actors</th>
+                {data.map((d, i ) => (
+                    <tr key={i}>
+                        <td>
+                            <div class="landing-item">{d.title}</div>
+                        </td>
+                    </tr>
+                ))}
+        </div>
+        */}
+    </div>
     );
-};
+}
 
 export default Landing;
