@@ -3,30 +3,26 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #1030AD;
+    background-color: #2C3531;
     border-style: solid;
     border-width: 1px;
-    border-color: #FFE20A;
+    border-color: #D1E8E2;
   }
     
   #item {
     float: left;
-    border-right:1px solid #FFE20A;
+    border-right:1px solid #116466;
   }
     
   #item a {
     display: block;
-    color: #F19C0A;
+    color: #D1E8E2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
     
   #item a:hover:not(.active) {
-    background-color: #FFE20A;
-    color: #1030AD
-  }
-    
-  #activeLink {
-    background-color: #FFE20A;
+    background-color: #FFCB9A;
+    color: #116466
   }

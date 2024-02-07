@@ -16,32 +16,40 @@ function Landing(){
       .catch(error => {
         console.error(error);
       });
-    
+
+      const filmClick = (filmTitle) => {
+        console.log('Film:', filmTitle);
+      };
+
+      const actorClick = (actorFirst, actorLast) => {
+        console.log('Actor:', actorFirst, actorLast);
+      };
 
   return(
-    <div class="landing-container">
-        <div class="landing-child">
-                <th>Top Five Rented Movies</th>
-                {filmData.map((filmD, filmI ) => (
-                    <tr key={filmI}>
-                        <td>
-                            <div class="landing-item">{filmD.title}</div>
-                        </td>
-                    </tr>
-                ))}
-        </div>
+    <div class="container">
+        <table>
+            <th>Top Five Rented Films</th>
+            {filmData.map((filmD, filmI ) => (
+                <tr key={filmI}
+                onClick={(e) => filmClick(filmD.title)}>
+                    <td>
+                        {filmD.title}
+                    </td>
+                </tr>
+            ))}
+        </table>
 
-        <div class="landing-child">
-                <th>Top Five Actors</th>
-                {actorData.map((actorD, actorI ) => (
-                    <tr key={actorI}>
-                        <td>
-                            <div class="landing-item">{actorD.first_name} {actorD.last_name}</div>
-                        </td>
-                    </tr>
-                ))}
-        </div>
-
+        <table>
+            <th>Top Five Actors</th>
+            {actorData.map((actorD, actorI ) => (
+                <tr key={actorI}
+                onClick={(e) => actorClick(actorD.first_name, actorD.last_name)}>
+                    <td>
+                        {actorD.first_name} {actorD.last_name}
+                    </td>
+                </tr>
+            ))}
+        </table>
     </div>
     );
 }
