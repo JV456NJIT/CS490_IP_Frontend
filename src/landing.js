@@ -96,6 +96,10 @@ function Landing(){
                                         <td>Film Description:</td>
                                         <td>{filmD.description}</td>
                                     </tr>
+                                    <tr>
+                                        <td>Film Genre:</td>
+                                        <td>{filmD.name}</td>
+                                    </tr>
                                 </tbody>
                             ))}
                         </table>
